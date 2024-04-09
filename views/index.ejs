@@ -1,0 +1,30 @@
+<!DOCTYPE html>   
+<html>
+   <head>
+      <title>Photo of the Day!</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="/style.css">
+   </head>
+   <body>
+      
+      <div class="photo">
+         <% if (locals.imageUrl) { %>
+            <h2>Enjoy the photo of the Day!</h2>
+            <img src="<%= imageUrl %>" alt="Random Image of the Day">
+            <h5>*To view another image go back on your browser!</h5>
+
+         <% } else { %>
+
+            <h2>Enter the size of the photo you would like to see</h2>
+            <form action="/image" id="form" class="form" method="POST">
+               <input type="text" class="textheight" name="width" placeholder="Width"> X
+               <input type="text" class="textheight" name="height" placeholder="Height">
+               <button class="textheight" type="submit">View Image</button>
+            </form>
+
+         <% } %>
+
+      </div>
+   </body>
+</html>
